@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #ffafbd, #ffc3a0);
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.container {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  animation: fadeIn 3s ease-in-out;
+  max-width: 400px;
+}
+
+.heart {
+  width: 100px;
+  height: 90px;
+  position: relative;
+  margin: 0 auto 20px;
+  animation: beat 1s infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 52px;
+  height: 80px;
+  background: red;
+  border-radius: 50px 50px 0 0;
+}
+
+.heart::before {
+  left: 50px;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.heart::after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+.message {
+  font-size: 2em;
+  color: #d62828;
+  margin: 10px 0;
+}
+
+.note {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.footer {
+  font-size: 1em;
+  color: #555;
+  font-style: italic;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
